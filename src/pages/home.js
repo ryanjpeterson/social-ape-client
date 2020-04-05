@@ -1,44 +1,50 @@
-import React, { Component } from 'react'
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
 // Material UI
-import Grid from '@material-ui/core/Grid';
+import Grid from "@material-ui/core/Grid";
 
-import Scream from '../components/Scream';
+import Scream from "../components/Scream";
+import Profile from "../components/Profile";
 
 class home extends Component {
-    state = {
-        screams: null
-    };
+  state = {
+    screams: null,
+  };
 
-    componentDidMount() {
-        axios.get('/screams')
-            .then(res => {
-                this.setState({
-                    screams: res.data
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }
+  componentDidMount() {
+    axios
+      .get("/screams")
+      .then((res) => {
+        this.setState({
+          screams: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
-    render() {
-        let recentScreamsMarkup = this.state.screams ? (
-            this.state.screams.map(scream => <Scream key={scream.screamId} scream={scream}/>)
-        ) : <p>Loading...</p>
+  render() {
+    let recentScreamsMarkup = this.state.screams ? (
+      this.state.screams.map((scream) => (
+        <Scream key={scream.screamId} scream={scream} />
+      ))
+    ) : (
+      <p>Loading...</p>
+    );
 
-        return (
-            <Grid container spacing={10}>
-                <Grid item sm={8} xs={12}>
-                    {recentScreamsMarkup}
-                </Grid>
-                <Grid item sm={4} xs={12}>
-                    <p>Profile</p>
-                </Grid>
-            </Grid>
-        )
-    }
+    return (
+      <Grid container spacing={10}>
+        <Grid item sm={8} xs={12}>
+          {recentScreamsMarkup}
+        </Grid>
+        <Grid item sm={4} xs={12}>
+          <Profile />
+        </Grid>
+      </Grid>
+    );
+  }
 }
 
 export default home;
