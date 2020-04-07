@@ -79,7 +79,7 @@ class EditDetails extends Component {
     const { classes } = this.props;
 
     return (
-      <Fragment id="editDetails">
+      <Fragment>
         <MyButton
           tip="Edit details"
           onClick={this.handleOpen}
