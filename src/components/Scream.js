@@ -22,9 +22,11 @@ import { likeScream, unlikeScream } from "../redux/actions/dataActions";
 
 // Components
 import MyButton from "../util/MyButton";
+import DeleteScream from "../components/DeleteScream";
 
 const styles = {
   card: {
+    position: "relative",
     display: "flex",
     marginBottom: 20,
   },
@@ -71,7 +73,10 @@ class Scream extends Component {
         likeCount,
         commentCount,
       },
-      user: { authenticated },
+      user: {
+        authenticated,
+        credentials: { handle },
+      },
     } = this.props;
 
     const likeButton = !authenticated ? (
@@ -90,6 +95,11 @@ class Scream extends Component {
       </MyButton>
     );
 
+    const deleteButton =
+      authenticated && userHandle === handle ? (
+        <DeleteScream screamId={screamId} />
+      ) : null;
+
     return (
       <Card className={classes.card}>
         <CardMedia
@@ -106,15 +116,22 @@ class Scream extends Component {
           >
             {userHandle}
           </Typography>
+
+          {deleteButton}
+
           <Typography variant="body2" color="textSecondary">
             {dayjs(createdAt).fromNow()}
           </Typography>
+
           <Typography variant="body1">{body}</Typography>
+
           {likeButton}
           <span>{likeCount} likes</span>
+
           <MyButton tip="Comments">
             <ChatIcon color="primary" />
           </MyButton>
+
           <span>{commentCount} comments</span>
         </CardContent>
       </Card>
