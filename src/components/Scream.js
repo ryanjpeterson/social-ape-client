@@ -26,16 +26,23 @@ import DeleteScream from "../components/DeleteScream";
 
 const styles = {
   card: {
+    minWidth: "300px",
     position: "relative",
     display: "flex",
     marginBottom: 20,
   },
   image: {
-    minWidth: 200,
+    minWidth: "200px",
   },
   content: {
+    minWidth: "300px",
     padding: 25,
     objectFit: "cover",
+  },
+  likeAndCommentContainer: {
+    display: "flex",
+    flexFlow: "row wrap",
+    alignItems: "center",
   },
 };
 
@@ -125,14 +132,20 @@ class Scream extends Component {
 
           <Typography variant="body1">{body}</Typography>
 
-          {likeButton}
-          <span>{likeCount} likes</span>
+          <div className={classes.likeAndCommentContainer}>
+            <div className={classes.likeContainer}>
+              {likeButton}
+              <span>{likeCount} likes</span>
+            </div>
 
-          <MyButton tip="Comments">
-            <ChatIcon color="primary" />
-          </MyButton>
+            <div className={classes.commentContainer}>
+              <MyButton tip="Comments">
+                <ChatIcon color="primary" />
+              </MyButton>
+            </div>
 
-          <span>{commentCount} comments</span>
+            <span>{commentCount} comments</span>
+          </div>
         </CardContent>
       </Card>
     );

@@ -96,20 +96,3 @@ const setAuthorizationHeader = (token) => {
   localStorage.setItem("FBIdToken", `Bearer ${token}`);
   axios.defaults.headers.common["Authorization"] = FBIdToken;
 };
-
-// axios.post('/signup', newUserData)
-// .then(res => {
-//     console.log(res.data);
-//     localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`)
-//     this.setState({
-//         loading: false
-//     });
-//     this.props.history.push('/');
-// })
-// .catch(err => {
-//     console.log(err.response.data);
-//     this.setState({
-//         errors: err.response.data,
-//         loading: false
-//     });
-// });

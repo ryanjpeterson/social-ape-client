@@ -17,6 +17,7 @@ import Notifications from "@material-ui/icons/Notifications";
 
 // Components
 import MyButton from "../util/MyButton";
+import PostScream from "./PostScream";
 
 class Navbar extends Component {
   render() {
@@ -27,9 +28,7 @@ class Navbar extends Component {
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
-              <MyButton tip="Post a scream!">
-                <AddIcon />
-              </MyButton>
+              <PostScream />
 
               <Link to="/">
                 <MyButton tip="Home">

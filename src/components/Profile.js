@@ -28,6 +28,7 @@ import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 const styles = (theme) => ({
   paper: {
     padding: 20,
+    minWidth: "300px",
   },
   profile: {
     "& .image-wrapper": {
