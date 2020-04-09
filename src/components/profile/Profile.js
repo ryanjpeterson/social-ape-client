@@ -4,12 +4,12 @@ import Link from "react-router-dom/Link";
 import dayjs from "dayjs";
 
 // Components
-import EditDetails from "../components/EditDetails";
-import MyButton from "../util/MyButton";
+import EditDetails from "./EditDetails";
+import MyButton from "../../util/MyButton";
 
 // Redux
 import { connect } from "react-redux";
-import { logoutUser, uploadImage } from "../redux/actions/userActions";
+import { logoutUser, uploadImage } from "../../redux/actions/userActions";
 
 // Material UI
 import withStyles from "@material-ui/core/styles/withStyles";

@@ -15,10 +15,10 @@ import EditIcon from "@material-ui/icons/Edit";
 
 // Redux
 import { connect } from "react-redux";
-import { editUserDetails } from "../redux/actions/userActions";
+import { editUserDetails } from "../../redux/actions/userActions";
 
 // Components
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
 
 const styles = (theme) => ({
   button: {

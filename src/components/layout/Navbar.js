@@ -15,8 +15,8 @@ import HomeIcon from "@material-ui/icons/Home";
 import Notifications from "@material-ui/icons/Notifications";
 
 // Components
-import MyButton from "../util/MyButton";
-import PostScream from "./PostScream";
+import MyButton from "../../util/MyButton";
+import PostScream from "../scream/PostScream";
 
 class Navbar extends Component {
   render() {

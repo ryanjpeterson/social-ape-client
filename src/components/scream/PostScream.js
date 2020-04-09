@@ -15,11 +15,11 @@ import AddIcon from "@material-ui/icons/Add";
 import CloseIcon from "@material-ui/icons/Close";
 
 // Components
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
 
 // Redux
 import { connect } from "react-redux";
-import { postScream, clearErrors } from "../redux/actions/dataActions";
+import { postScream, clearErrors } from "../../redux/actions/dataActions";
 
 const styles = (theme) => ({
   ...theme.primary,
