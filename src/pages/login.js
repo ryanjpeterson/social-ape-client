@@ -58,6 +58,7 @@ class login extends Component {
       classes,
       UI: { loading },
     } = this.props;
+
     const { errors } = this.state;
 
     return (
@@ -74,8 +75,8 @@ class login extends Component {
               name="email"
               type="email"
               label="Email"
-              helperText={errors.email}
               error={errors.email ? true : false}
+              helperText={errors.email}
               className={classes.textField}
               value={this.state.email}
               onChange={this.handleChange}
@@ -86,8 +87,8 @@ class login extends Component {
               name="password"
               type="password"
               label="Password"
-              helperText={errors.password}
               error={errors.password ? true : false}
+              helperText={errors.password}
               className={classes.textField}
               value={this.state.password}
               onChange={this.handleChange}
