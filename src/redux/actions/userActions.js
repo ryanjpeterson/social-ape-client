@@ -6,6 +6,7 @@ import {
   LOADING_UI,
   SET_UNAUTHENTICATED,
   LOADING_USER,
+  MARK_NOTIFICATIONS_READ,
 } from "../types";
 
 export const loginUser = (userData, history) => (dispatch) => {
@@ -90,7 +91,18 @@ export const editUserDetails = (userDetails) => (dispatch) => {
     });
 };
 
-const setAuthorizationHeader = (token) => {
+export const markNotificationsRead = (notificationIds) => (dispatch) => {
+  axios
+    .post("/notifications", notificationIds)
+    .then((res) => {
+      dispatch({
+        type: MARK_NOTIFICATIONS_READ,
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+export const setAuthorizationHeader = (token) => {
   const FBIdToken = `Bearer ${token}`;
   localStorage.setItem("FBIdToken", `Bearer ${token}`);
   axios.defaults.headers.common["Authorization"] = FBIdToken;
