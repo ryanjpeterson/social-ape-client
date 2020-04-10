@@ -70,7 +70,6 @@ class CommentForm extends Component {
           >
             Submit
           </Button>
-          <button onClick={() => console.log(this.state.body)}>state</button>
         </form>
         <hr className={classes.visibleSeparator} />
       </Grid>
