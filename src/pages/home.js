@@ -11,6 +11,8 @@ import Profile from "../components/profile/Profile";
 import { connect } from "react-redux";
 import { getScreams } from "../redux/actions/dataActions";
 
+import ScreamSkeleton from "../util/ScreamSkeleton";
+
 class home extends Component {
   componentDidMount() {
     this.props.getScreams();
@@ -22,7 +24,7 @@ class home extends Component {
     let recentScreamsMarkup = !loading ? (
       screams.map((scream) => <Scream key={scream.screamId} scream={scream} />)
     ) : (
-      <p>Loading...</p>
+      <ScreamSkeleton />
     );
 
     return (

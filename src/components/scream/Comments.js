@@ -1,30 +1,28 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
-
-// Material UI
-import withStyles from "@material-ui/core/styles/withStyles";
+// MUI
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 const styles = (theme) => ({
-  ...theme.styles,
+  ...theme.spreadIt,
   commentImage: {
-    width: "100px",
-    height: "100px",
+    maxWidth: "100%",
+    height: 100,
     objectFit: "cover",
     borderRadius: "50%",
   },
   commentData: {
-    marginLeft: "1.5rem",
+    marginLeft: 20,
   },
 });
 
 class Comments extends Component {
   render() {
-    const { classes, comments } = this.props;
-
+    const { comments, classes } = this.props;
     return (
       <Grid container>
         {comments.map((comment, index) => {
@@ -51,10 +49,10 @@ class Comments extends Component {
                         {userHandle}
                       </Typography>
                       <Typography variant="body2" color="textSecondary">
-                        {dayjs(createdAt).format("h:mma, MMMM DD YYYY")}
+                        {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
                       </Typography>
                       <hr className={classes.invisibleSeparator} />
-                      <Typography variant="body1">{body}</Typography>
+                      <Typography variabnt="body1">{body}</Typography>
                     </div>
                   </Grid>
                 </Grid>

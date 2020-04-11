@@ -13,7 +13,7 @@ import { logoutUser, getUserData } from "./redux/actions/userActions";
 // Material UI
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import themeFile from "./util/theme";
+import themeObject from "./util/theme";
 
 // Pages
 import home from "./pages/home";
@@ -25,7 +25,7 @@ import user from "./pages/user";
 import Navbar from "./components/layout/Navbar";
 import AuthRoute from "./util/AuthRoute";
 
-const theme = createMuiTheme(themeFile);
+const theme = createMuiTheme(themeObject);
 
 const token = localStorage.FBIdToken;
 

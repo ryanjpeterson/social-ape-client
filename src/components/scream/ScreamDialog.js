@@ -26,7 +26,7 @@ import Comments from "./Comments";
 import CommentForm from "./CommentForm";
 
 const styles = (theme) => ({
-  ...theme.styles,
+  ...theme.spreadIt,
   profileImage: {
     width: 200,
     height: 200,
@@ -104,9 +104,9 @@ class ScreamDialog extends Component {
         createdAt,
         likeCount,
         commentCount,
+        comments,
         userImage,
         userHandle,
-        comments,
       },
       UI: { loading },
     } = this.props;
@@ -149,7 +149,7 @@ class ScreamDialog extends Component {
             {commentCount} {commentCount === 1 ? "comment " : "comments"}
           </span>
         </Grid>
-        <hr className={classes.visibleSeparator} />
+        <hr className={classes.invisibleSeparator} />
         <CommentForm screamId={screamId} />
         <Comments comments={comments} />
       </Grid>
